@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Learning javascript</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style type="text/css">
+        #circle {
+          width:  200px;
+          height: 200px;
+          background-color: red;
+          border-radius: 100px; 
+        }
+        </style>
+   </head>
+      <body>
+      
+        <button id = "boo">I love</button>
+        <p id ="HI">HI</p>
+        <button id = "ch">change</button>
+        <p id= "22">this is wired</p>
+        <button id = "app">append</button>
+        <p id = "23">javascript ..... </p>
+        <button id = "ce">create</button>
+        <div id = "24"></div>
+        <div style="clear: both"></div>
+        <div id = "circle"></div>
+        <script type="text/javascript">
+
+          document.getElementById('boo').onclick= function (){
+            alert("I love you too");
+          };
+          
+          alert(document.getElementById('HI').innerHTML); 
+
+          document.getElementById("ch").onclick= function (){
+           document.getElementById("22").innerHTML = "this is awosme";
+          };
+          document.getElementById("app").onclick= function (){
+           document.getElementById("23").innerHTML += "long way!";
+          };
+           document.getElementById("ce").onclick= function (){
+           document.getElementById("24").innerHTML += "<ul><li>yousef</li><li>Amar</li></ul>";
+          };
+          document.getElementById("circle").onclick= function (){
+           document.getElementById("circle").style.backgroundColor = "blue"; 
+          };
+
+
+        </script>
+     </body>  
+</html>

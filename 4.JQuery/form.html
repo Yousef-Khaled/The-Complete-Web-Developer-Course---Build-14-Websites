@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Learning jQuery</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style type="text/css">
+        #content{
+          width: 600px;
+          margin-left: auto ;
+          margin-right: auto ;
+          
+        }
+        .TextInput{
+          width: 300px;
+          height: 25px;
+          font-weight: 1.5em;
+          border-width: .4px;
+          border-color: blue; 
+          border-radius: 4px;
+          padding: 10px; 
+          margin-top : 10px;
+          margin-bottom: 10px;  
+          font-size: 1.5em;
+        }
+        label{
+          float: left;
+          font-size: 1.4em;
+          padding-top: 10px;
+          width: 250px;
+          font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+        }
+        #sb{
+          width: 200px;
+          height: 55px;
+          margin: 0 auto;
+          margin-left: 150px;
+          margin-top: 30px;
+          background-color: #5F9A4C;
+          color: white;
+          border-color: blue;
+          border-width: .1px; 
+          font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; 
+
+        }
+        #err{
+          background-color: #FF574C;
+          font-size: 1.5em;
+          color: white;
+          margin-bottom: 5px; 
+        }
+        </style>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>	
+
+   		
+   </head>
+      <body>
+
+      <div id = "content">
+      <div id = "err"></div>
+      <form id="VF">
+        <label for="E-mail">Email</label>
+        <input name="E-mail" class="TextInput" id="email"></input>
+        <label for="tele">Telephone</label>
+        <input name="tele" class="TextInput" id = "telep"></input>
+        <label for="pass">Password</label>
+        <input name="pass" class="TextInput" type="password" id ="pass1"></input>
+        <label for="tele">Confrim Password</label>
+        <input name="tele" class="TextInput" type="password" id = "pass2"></input>
+        <input type="submit" class="TextInput" id="sb"></input>
+        </form>
+      </div>
+      	 <script>
+           $("#VF").submit(function (event){
+              var err = "";
+              event.preventDefault();
+                       function isValidEmailAddress(emailAddress) {
+          var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+      return pattern.test(emailAddress);
+        }; 
+              if (!isValidEmailAddress($("#email").val()))
+              {
+                err = err + " Invalid email";
+              }
+                if (!$.isNumeric($("#telep").val()))
+              {
+                err = err+ "<br /> Invalid phone";
+              }
+                if ($("#pass1").val() != $("#pass2").val())
+              {
+                err = err+ "<br /> Passwords don't match";
+              }
+              $("#err").html(err);
+           });
+  
+         </script>
+     </body>  
+</html>

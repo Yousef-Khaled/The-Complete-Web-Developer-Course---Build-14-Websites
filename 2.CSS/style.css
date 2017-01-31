@@ -1,0 +1,128 @@
+#topBar {
+          background-color: #9D0A0E;
+          height: 50px; 
+        }
+        body {
+          margin: 0px;
+
+        }
+        #logo img {
+          width: 80px;
+          height: 30px;
+          margin-left: 20px;
+          margin-top: 7.5px; 
+        }
+        #logo {
+          width: 120px;
+          height: 50px;
+          border-right: 3px solid #990000;
+          float: left;
+        }
+        .fixedwidth{
+          width: 1050px;
+          height: 10px;
+          margin: 0 auto;
+        }
+        #signIn img{
+          width: 40px;
+          height: 40px;
+          margin-top: 2px; 
+          float: left;
+        }
+        #signIn{
+          height: 50px;
+          width: 200px;
+          float: left;
+          border-right: 3px solid #990000;
+          color: white;
+          font-size: 110%;
+        }
+        #written {
+          float: left;
+          margin-top: 17px; 
+          margin-left:5px; 
+          font-weight: bold;
+        }
+        #mB{
+          float: left;
+          height: 50px;
+          margin-top: -10px;
+        }
+        #mB ul{
+          padding: 0px;
+        }
+        #mB li{
+          list-style: none;
+          float: left;
+          padding-left: 20px;
+          padding-right:20px;  
+          color: white;
+          margin-top: -25px; 
+          border-right: 3px solid #990000;
+          padding-top: 25px; 
+          padding-bottom: 14px; 
+          font-weight: bold;
+        }
+        #seabox{
+          float: left;
+          padding: 10px;
+          margin-top: -10px;
+          height: 30px;
+        }
+        #seabox input{
+          margin-top: 4px; 
+          font-size: .9em;
+          font-weight: bold;
+          padding-left: 20px; 
+          background-image: url("images/m.png");
+          background-repeat: no-repeat;
+          background-size: 20px 20px;
+          background-position: right center;
+        }
+        #newsBar{
+          height: 100px;
+          background: #A50D0D;
+        }
+        #newsBar p{
+          margin: 0px;
+          color: white;
+        }
+        #News{
+          font-size: 3em;
+          padding-top: 10px; 
+          padding-left: 19px;
+          float: left;
+        }
+        #UK{
+          padding-left: 10px;
+          font-size: .7em;
+        }
+        #break{
+          clear: both;
+        }
+        #menu{
+          background: #3e0c0d;
+          margin-top: 8px; 
+          color: white;
+          height: 25px;
+        }
+        #menu ul{
+          margin: 0px;
+          padding: 0px;
+          float: left;
+          
+        }
+        #menu li{
+          list-style: none;
+          float: left;
+          padding-left: 5px;
+          padding-right: 5px; 
+          padding-top: 6px;
+          border-right:1px solid #990000;
+         
+        }
+        .select{
+          color: #666666;
+          padding: 1px;
+          background-color: #ededed;
+        }

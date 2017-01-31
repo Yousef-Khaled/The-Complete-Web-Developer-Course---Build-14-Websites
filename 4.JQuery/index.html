@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Learning jQuery</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <style type="text/css">
+        	#circle{
+        		width: 250px;
+        		height: 250px;
+        		border-radius:125px;
+        		background-color: red; 
+        	}
+        	.square{
+        		width: 250px;
+        		height: 250px;
+        		background-color: blue; 
+        		margin: 20px; 
+        	}
+          .tt{
+            font-size: 1.2em;
+            padding-top: 125px;
+            padding-left: 50px ;
+
+          }
+          #bs{
+            height: 400px;
+            width: 400px;
+            background-color: yellow; 
+          }
+        </style>
+        
+   </head>
+      <body>
+      	<div class="square">
+         <p class="tt">Drage me around</p>
+
+        </div>
+        <div id = "bs"></div>
+        <script>
+        $(".square").draggable();
+        $("#bs").droppable({
+          drop: function (ui , event) {
+            $("#bs").css('background-color' , 'red');
+          }
+        });
+        </script>
+     </body>  
+</html>

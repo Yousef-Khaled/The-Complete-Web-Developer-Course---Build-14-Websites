@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Code to View</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style type="text/css">
+          #topBar{
+            height: 50px;
+            width: 100%;
+            background-color: #EFF0F1; 
+            margin-top: -8px; 
+            border-bottom: 1px solid grey;
+            margin-left: -6px;
+            padding-right: 14px;  
+          }
+          #title{
+            font-size: 1.25em;
+            font-weight: bolder;
+            padding-top: 12px;
+            padding-left: 20px;
+            font-family: Sans-serif; 
+            float: left;  
+          }
+
+          #buttonDiv{
+            float: right;
+            padding-top: 10px;
+            padding-right: 20px; 
+          }
+          #run{
+            font-size: 120%;
+            font-family: sans-serif;
+            font-weight: bold;
+          }
+          #list{
+            margin: 0 auto;
+            list-style: none;
+            width: 260px;
+            height: 30px;
+            position: relative;
+            top: 10px;
+          }
+          #list li{
+            float: left;
+            border: 1px solid grey; 
+            font-family: sans-serif;
+            font-size: 1.2em;
+            padding: 4px;
+            padding-right: 10px;
+            padding-left: 10px; 
+           }
+
+          #clear{
+            clear: both;
+          }
+          .CC{
+           
+            height: 100%;
+            width: 50%;
+            float: left;
+            margin-left: -6px;	
+          	position: relative;
+          	
+          }
+
+          .CC textarea {
+          	height: 100%;
+          	width: 98%;
+          	font-size: 1.2em;
+          	border: none;
+          	box-sizing: border-box;
+          	border-right: 1px solid grey; 
+          	padding: 10px;
+
+          }
+          .label{
+          	position: absolute;
+          	right: 25px; 
+          	top: 5px; 
+          	color: #7B8083;
+          	
+          }
+          #CSSC , #JSC{
+          	display: none;
+          }
+          iframe{
+          	height: 100%;
+          	position: relative;
+          	left: 20px;
+          	border: none; 
+          }
+          .se{
+          	background: grey;
+          }
+
+        </style>
+      
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>	
+
+   		
+   </head>
+      <body>
+        <div id="topBar">
+          <div id="title">CodePlayer</div>
+          <div id = "buttonDiv">
+            <button id = "run">Run</button>
+          </div>
+          <ul id="list">
+            <li  class="toggle se" style="border-top-left-radius:3px;  border-bottom-left-radius: 3px;">HTML</li>
+            <li  class="toggle ">CSS</li>
+            <li  class="toggle ">JS</li>
+            <li  class="toggle se" style=" border-top-right-radius: 3px;  border-bottom-right-radius: 3px;">Result</li>
+          </ul>
+
+        </div>
+          <div id="clear"></div>
+          <div class="CC" id = "HTMLC">
+          <div class="label">HTML</div>
+          	<textarea id = "a">Code Example</textarea>
+          </div>
+          <div class="CC" id = "CSSC">
+          <div class="label">CSS</div>
+          	<textarea id = "baa">Code Example</textarea>
+          </div>
+          <div class="CC" id = "JSC">
+          <div class="label">JS</div>
+          	<textarea>Code Example</textarea>
+          </div>
+          <div class="CC" id = "ResultC">
+          <div class="label" style="right: 3px;">Result</div>
+          	<iframe></iframe>
+          </div>
+      	 <script>
+        	var winHe = $(window).height();
+        	var barHe = $("#topBar").height();
+        	$(".CC").height((winHe - barHe - 1) + "px");
+        	$(".toggle").click( function() {
+        		$(this).toggleClass("se");
+        		var temp = $(this).html();
+        		$("#" + temp + "C").toggle();
+        		var num = $(".CC").filter(function () {
+        			return ($(this).css("display") != "none");
+        		}).length; 
+        		var width = 100 / num;
+        		$(".CC").css("width" , width + "%");
+        	    	
+       });
+        $("#run").click( function() {
+  
+    		$("iframe").contents().find("html").html('<style>' + $("#baa").val() + "</style>" + $("#a").val());
+
+       });
+         </script>
+     </body>  
+</html>
